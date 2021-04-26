@@ -11,8 +11,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
     @IBOutlet weak var lblError: UILabel!
+    
+    let userDefaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +60,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             self.view.endEditing(true)
             
-            if(email == "admin@nibm.lk" && password == "123") {
+            if(email == "admin" && password == "123") {
+                
+                self.userDefaults.setValue("true",forKey: "LOGGED_IN")
                 navigateHome()
+                
             } else {
                 self.showError("Invalid credentials!")
             }
