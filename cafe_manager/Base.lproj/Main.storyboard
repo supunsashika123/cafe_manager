@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -381,12 +382,73 @@
                     <view key="view" contentMode="scaleToFill" id="fc7-QO-Ozd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-e7-V0r">
+                                <rect key="frame" x="127" y="74" width="160" height="32"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BmP-Z4-tuF">
+                                <rect key="frame" x="142.5" y="156" width="129" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="onTextChange:" destination="hjo-L4-GMQ" eventType="editingChanged" id="k1X-pD-wQs"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-L4-HIo">
+                                <rect key="frame" x="157" y="210" width="100" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="q3U-ad-CpR"/>
+                                    <constraint firstAttribute="height" constant="40" id="y8P-a5-f6o"/>
+                                </constraints>
+                                <state key="normal" title="Add +">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAddClick:" destination="hjo-L4-GMQ" eventType="touchUpInside" id="7gy-Ol-547"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-wM-a75">
+                                <rect key="frame" x="20" y="280" width="374" height="440"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="wd7-FN-Zal">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wd7-FN-Zal" id="YI3-q0-yQd">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WGT-wM-a75" firstAttribute="top" secondItem="Oki-L4-HIo" secondAttribute="bottom" constant="30" id="2tq-sb-zeD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WGT-wM-a75" secondAttribute="trailing" id="5J9-ar-tkC"/>
+                            <constraint firstItem="Oki-L4-HIo" firstAttribute="centerX" secondItem="fc7-QO-Ozd" secondAttribute="centerX" id="9Sd-eH-UmW"/>
+                            <constraint firstItem="WGT-wM-a75" firstAttribute="leading" secondItem="fc7-QO-Ozd" secondAttribute="leadingMargin" id="AVA-X8-wTt"/>
+                            <constraint firstItem="BmP-Z4-tuF" firstAttribute="top" secondItem="H9O-e7-V0r" secondAttribute="bottom" constant="50" id="By0-Tn-aD1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="WGT-wM-a75" secondAttribute="bottom" id="SeG-V3-nsq"/>
+                            <constraint firstItem="Oki-L4-HIo" firstAttribute="top" secondItem="BmP-Z4-tuF" secondAttribute="bottom" constant="20" id="dYA-1f-Wvl"/>
+                            <constraint firstItem="BmP-Z4-tuF" firstAttribute="centerX" secondItem="fc7-QO-Ozd" secondAttribute="centerX" id="ef3-Fl-RyU"/>
+                            <constraint firstItem="H9O-e7-V0r" firstAttribute="centerX" secondItem="fc7-QO-Ozd" secondAttribute="centerX" id="tjq-nf-pho"/>
+                            <constraint firstItem="H9O-e7-V0r" firstAttribute="top" secondItem="fc7-QO-Ozd" secondAttribute="topMargin" constant="30" id="wtL-GM-AdG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="Oki-L4-HIo" id="day-6V-x0u"/>
+                        <outlet property="tblCategories" destination="WGT-wM-a75" id="lfl-o8-9Ac"/>
+                        <outlet property="txtCategory" destination="BmP-Z4-tuF" id="yfQ-Tf-rOS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTZ-0B-iIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2952" y="484"/>
+            <point key="canvasLocation" x="2949" y="485"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="7gb-B3-sB1">
@@ -395,7 +457,19 @@
                     <view key="view" contentMode="scaleToFill" id="4YV-12-sHc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new food item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSt-D3-r5I">
+                                <rect key="frame" x="96" y="74" width="222" height="32"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="top" secondItem="4YV-12-sHc" secondAttribute="topMargin" constant="30" id="B4u-5k-k0r"/>
+                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="centerX" secondItem="4YV-12-sHc" secondAttribute="centerX" id="IKc-7v-KV2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCP-dL-PcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -414,11 +488,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="180-LJ-bgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4335" y="481"/>
+            <point key="canvasLocation" x="4333" y="485"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="320" height="320"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
