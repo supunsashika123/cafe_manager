@@ -13,6 +13,8 @@ class OrdersListViewController: UIViewController {
     @IBOutlet weak var tblItems: UITableView!
     
     @Published var items = [Order]()
+    @Published var tableOrders = [[Order]]()
+    
     
     override func viewDidAppear(_ animated: Bool) {
         fetchOrders {
@@ -53,6 +55,20 @@ class OrdersListViewController: UIViewController {
                     }
                 }
                 
+                
+                self.tableOrders = []
+                for status in Constants.orderStatuses {
+                    let aa = self.items.filter({
+                        return $0.status == status
+                    })
+                    
+                    
+                    self.tableOrders.append(aa)
+                }
+                
+                
+                
+                
                 //                self.spinner.stopAnimating()
                 
                 DispatchQueue.main.async {
@@ -61,31 +77,14 @@ class OrdersListViewController: UIViewController {
             }
         }
     }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 3
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        if(section == 0){
-//         return "New Orders"
-//        }
-//        if(section == 1){
-//         return "Preparing"
-//        }
-//
-//        if(section == 2){
-//         return "Ready to pickup"
-//        }
-//
-//        return "Other"
-//    }
+
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
         
         if let destination = segue.destination as? OrderDetailsViewController {
-            destination.order = items[(tblItems.indexPathForSelectedRow?.row)!]
+            destination.order = tableOrders[(tblItems.indexPathForSelectedRow?.section)!][(tblItems.indexPathForSelectedRow?.row)!]
         }
     }
     
@@ -106,15 +105,39 @@ extension OrdersListViewController: UITableViewDelegate {
 
 extension OrdersListViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.00
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Constants.orderStatuses.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return items.count
+        if(tableOrders.count > section){
+            return "\(Constants.orderStatuses[section]) (\(tableOrders[section].count))"
+        } else {
+            return Constants.orderStatuses[section]
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+        if(tableOrders.count > section){
+            return tableOrders[section].count
+        } else {
+            return 0
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let itemData = items[indexPath.row]
+        let itemData = tableOrders[indexPath.section][indexPath.row]
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrdersTableCell
         

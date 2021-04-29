@@ -20,7 +20,6 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     var order:Order!
-    let statuses = ["NEW", "PREPARATION", "READY", "ARRIVING", "DONE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +39,9 @@ class OrderDetailsViewController: UIViewController {
             btnChangeStatus.isHidden = true
             btnCancelOrder.isHidden = true
         } else {
-            for (index, status) in statuses.enumerated() {
+            for (index, status) in Constants.orderStatuses.enumerated() {
                 if(order.status == status) {
-                    btnChangeStatus.setTitle("Change to \(statuses[index+1])", for: .normal)
+                    btnChangeStatus.setTitle("Change to \(Constants.orderStatuses[index+1])", for: .normal)
                 }
             }
         }
@@ -60,9 +59,9 @@ class OrderDetailsViewController: UIViewController {
     }
     
     @IBAction func changeOrderStatusButtonClick(_ sender: Any) {
-        for (index, status) in statuses.enumerated() {
+        for (index, status) in Constants.orderStatuses.enumerated() {
             if(order.status == status){
-                updateStatus(newStatus: statuses[index+1])
+                updateStatus(newStatus: Constants.orderStatuses[index+1])
             }
         }
     }

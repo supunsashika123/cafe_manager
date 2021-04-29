@@ -14,6 +14,7 @@
 		EC02A077263ACE6B00E296D1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A076263ACE6B00E296D1 /* StoreViewController.swift */; };
 		EC02A07A263AD32400E296D1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A079263AD32300E296D1 /* PreviewViewController.swift */; };
 		EC02A07D263AE76E00E296D1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A07C263AE76E00E296D1 /* Category.swift */; };
+		EC02A0AE263B360F00E296D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0AD263B360F00E296D1 /* Constants.swift */; };
 		EC981EDD2635FE3000ADE1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */; };
 		EC981EDF2635FE3000ADE1A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */; };
 		EC981EE12635FE3000ADE1A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EE02635FE3000ADE1A3 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		EC02A076263ACE6B00E296D1 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		EC02A079263AD32300E296D1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		EC02A07C263AE76E00E296D1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EC02A0AD263B360F00E296D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC981ED92635FE3000ADE1A3 /* cafe_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cafe_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC02A0AC263B35FC00E296D1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC02A0AD263B360F00E296D1 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EC981ED02635FE3000ADE1A3 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		EC981EDB2635FE3000ADE1A3 /* cafe_manager */ = {
 			isa = PBXGroup;
 			children = (
+				EC02A0AC263B35FC00E296D1 /* Helpers */,
 				EC981F59263735EE00ADE1A3 /* Models */,
 				EC981EF12636009900ADE1A3 /* View Controllers */,
 				EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */,
@@ -266,6 +277,7 @@
 				EC981F3E26372FE200ADE1A3 /* OrdersListViewController.swift in Sources */,
 				EC02A07D263AE76E00E296D1 /* Category.swift in Sources */,
 				EC02A071263ACBDB00E296D1 /* CategoryViewController.swift in Sources */,
+				EC02A0AE263B360F00E296D1 /* Constants.swift in Sources */,
 				EC981EDF2635FE3000ADE1A3 /* SceneDelegate.swift in Sources */,
 				EC02A07A263AD32400E296D1 /* PreviewViewController.swift in Sources */,
 			);
