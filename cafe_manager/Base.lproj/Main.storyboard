@@ -123,7 +123,7 @@
         <!--Orders-->
         <scene sceneID="l4w-Je-YDQ">
             <objects>
-                <viewController id="b8G-Qj-ean" customClass="OrdersListViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdersListViewController" id="b8G-Qj-ean" customClass="OrdersListViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bfg-O9-ItM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,10 +245,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr8-nw-cLl">
-                                <rect key="frame" x="190" y="758" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
+                                <rect key="frame" x="136.5" y="758" width="141" height="30"/>
+                                <state key="normal" title="Change to Preparing"/>
                                 <connections>
-                                    <action selector="backBtnPress:" destination="8gA-7O-ijI" eventType="touchUpInside" id="DGc-mP-WTU"/>
+                                    <action selector="changeOrderStatusButtonClick:" destination="8gA-7O-ijI" eventType="touchUpInside" id="4jn-Rw-d7P"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Date : Whatever" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-gE-6IZ">
@@ -275,6 +275,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-ds-evF">
+                                <rect key="frame" x="161.5" y="721" width="91" height="30"/>
+                                <state key="normal" title="Cancel Order">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelOrderButtonClick:" destination="8gA-7O-ijI" eventType="touchUpInside" id="quT-jd-QcC"/>
+                                    <action selector="changeOrderStatusButtonClick:" destination="8gA-7O-ijI" eventType="touchUpInside" id="cLR-pa-fo6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bEq-4V-vNJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -286,6 +296,7 @@
                             <constraint firstItem="bEq-4V-vNJ" firstAttribute="bottom" secondItem="Yr8-nw-cLl" secondAttribute="bottom" constant="20" id="G8b-TS-wR6"/>
                             <constraint firstItem="Yr8-nw-cLl" firstAttribute="centerX" secondItem="5yV-gA-z5m" secondAttribute="centerX" id="JsP-y4-BAK"/>
                             <constraint firstItem="dpc-C3-wtE" firstAttribute="top" secondItem="aPL-Ax-gMe" secondAttribute="bottom" constant="10" id="LaM-CY-r1i"/>
+                            <constraint firstItem="Yr8-nw-cLl" firstAttribute="top" secondItem="Tux-ds-evF" secondAttribute="bottom" constant="7" id="OLp-KU-Ct9"/>
                             <constraint firstItem="aPL-Ax-gMe" firstAttribute="top" secondItem="5Y3-gE-6IZ" secondAttribute="bottom" constant="10" id="XWV-qS-Tb7"/>
                             <constraint firstItem="5Y3-gE-6IZ" firstAttribute="top" secondItem="rfv-lc-wCz" secondAttribute="bottom" constant="60" id="Xt4-dV-3c9"/>
                             <constraint firstItem="rfv-lc-wCz" firstAttribute="top" secondItem="bEq-4V-vNJ" secondAttribute="top" constant="30" id="iGp-he-3DX"/>
@@ -293,11 +304,14 @@
                             <constraint firstItem="dpc-C3-wtE" firstAttribute="centerX" secondItem="5yV-gA-z5m" secondAttribute="centerX" id="ka1-eA-Stb"/>
                             <constraint firstItem="5Y3-gE-6IZ" firstAttribute="centerX" secondItem="5yV-gA-z5m" secondAttribute="centerX" id="qUN-IJ-dr8"/>
                             <constraint firstItem="aPL-Ax-gMe" firstAttribute="top" secondItem="5Y3-gE-6IZ" secondAttribute="bottom" constant="10" id="u83-lp-q45"/>
+                            <constraint firstItem="Tux-ds-evF" firstAttribute="centerX" secondItem="5yV-gA-z5m" secondAttribute="centerX" id="z1E-yf-1t0"/>
                             <constraint firstItem="jld-Dx-FKU" firstAttribute="centerY" secondItem="5yV-gA-z5m" secondAttribute="centerY" id="zAr-05-qL6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="koO-xW-2hV"/>
                     <connections>
+                        <outlet property="btnCancelOrder" destination="Tux-ds-evF" id="3vz-CB-icc"/>
+                        <outlet property="btnChangeStatus" destination="Yr8-nw-cLl" id="FB2-cQ-y1d"/>
                         <outlet property="lblDate" destination="5Y3-gE-6IZ" id="sqU-Zd-dSA"/>
                         <outlet property="lblStatus" destination="aPL-Ax-gMe" id="xVO-NG-l8E"/>
                         <outlet property="lblTotalPrice" destination="dpc-C3-wtE" id="fUr-JE-aVP"/>

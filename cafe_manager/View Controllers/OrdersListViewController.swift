@@ -14,13 +14,18 @@ class OrdersListViewController: UIViewController {
     
     @Published var items = [Order]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
         fetchOrders {
             self.tblItems.reloadData()
         }
         
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
         tblItems.rowHeight = 70
         tblItems.delegate = self
         tblItems.dataSource = self
@@ -31,6 +36,7 @@ class OrdersListViewController: UIViewController {
         let db = Firestore.firestore()
         
         //        spinner.startAnimating()
+        self.items = []
         
         db.collection("orders").getDocuments { (snapshot, err) in
             if let err = err {
@@ -39,7 +45,6 @@ class OrdersListViewController: UIViewController {
                 
                 for itm in snapshot!.documents {
                     do {
-                        
                         let objItem = try itm.data(as: Order.self)
                         
                         self.items.append(objItem!)

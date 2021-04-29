@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class OrderDetailsViewController: UIViewController {
     
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblTotalPrice: UILabel!
+    @IBOutlet weak var btnChangeStatus: UIButton!
+    @IBOutlet weak var btnCancelOrder: UIButton!
     
     @IBOutlet weak var stackView: UIStackView!
     
     var order:Order!
+    let statuses = ["NEW", "PREPARATION", "READY", "ARRIVING", "DONE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.hidesBackButton = false
-
-        print(order!)
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm E, d MMM y"
@@ -32,7 +36,17 @@ class OrderDetailsViewController: UIViewController {
         lblStatus.text = "Status - \(order.status)"
         lblTotalPrice.text = "Total Price - LKR \(String(format: "%.2f", order.total_price))"
         
-        
+        if(order.status == "DONE" || order.status == "CANCELED") {
+            btnChangeStatus.isHidden = true
+            btnCancelOrder.isHidden = true
+        } else {
+            for (index, status) in statuses.enumerated() {
+                if(order.status == status) {
+                    btnChangeStatus.setTitle("Change to \(statuses[index+1])", for: .normal)
+                }
+            }
+        }
+         
         for i in 0..<order!.items.count {
             
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -45,8 +59,48 @@ class OrderDetailsViewController: UIViewController {
         }
     }
     
-    @IBAction func backBtnPress(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+    @IBAction func changeOrderStatusButtonClick(_ sender: Any) {
+        for (index, status) in statuses.enumerated() {
+            if(order.status == status){
+                updateStatus(newStatus: statuses[index+1])
+            }
+        }
     }
+    
+    @IBAction func cancelOrderButtonClick(_ sender: Any) {
+        let alert = UIAlertController(title: "Confirmation!", message: "Are you sure want to cancel this order?", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel Order", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+            
+            self.updateStatus(newStatus: "CANCELED")
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func updateStatus(newStatus:String) {
+        let db = Firestore.firestore()
+        
+        db.collection("orders").document(order.id!).setData(["status":newStatus],merge: true)
+        
+        let alert = UIAlertController(title: "Order status updated!", message: "Order status has been updated.", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+
     
 }
