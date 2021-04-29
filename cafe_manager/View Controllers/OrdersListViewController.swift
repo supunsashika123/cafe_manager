@@ -57,31 +57,31 @@ class OrdersListViewController: UIViewController {
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if(section == 0){
-         return "New Orders"
-        }
-        if(section == 1){
-         return "Preparing"
-        }
-        
-        if(section == 2){
-         return "Ready to pickup"
-        }
-        
-        return "Other"
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 3
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        if(section == 0){
+//         return "New Orders"
+//        }
+//        if(section == 1){
+//         return "Preparing"
+//        }
+//
+//        if(section == 2){
+//         return "Ready to pickup"
+//        }
+//
+//        return "Other"
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        if let destination = segue.destination as? OrderDetailsViewController {
-//            destination.order = items[(tblItems.indexPathForSelectedRow?.row)!]
-//        }
+        if let destination = segue.destination as? OrderDetailsViewController {
+            destination.order = items[(tblItems.indexPathForSelectedRow?.row)!]
+        }
     }
     
 }
@@ -90,7 +90,9 @@ class OrdersListViewController: UIViewController {
 extension OrdersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        performSegue(withIdentifier: "showOrderDetails", sender: self)
+        if(tableView == self.tblItems) {
+            performSegue(withIdentifier: "showOrderDetails", sender: self)
+        }
 
     }
     
