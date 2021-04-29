@@ -107,18 +107,70 @@
         <!--Store-->
         <scene sceneID="aH4-4k-neV">
             <objects>
-                <viewController id="SeN-sv-rFi" sceneMemberID="viewController">
+                <viewController id="SeN-sv-rFi" customClass="StoreViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1q-5Q-AH9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cQM-BR-7Eg">
+                                <rect key="frame" x="92" y="54" width="230" height="32"/>
+                                <segments>
+                                    <segment title="Preview"/>
+                                    <segment title="Category"/>
+                                    <segment title="Menu"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViews:" destination="SeN-sv-rFi" eventType="valueChanged" id="Zcc-vh-TRU"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYN-Oh-jS8">
+                                <rect key="frame" x="0.0" y="93" width="414" height="720"/>
+                                <connections>
+                                    <segue destination="hjo-L4-GMQ" kind="embed" id="Ega-dh-ZKe"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Pc-e3-Pwt">
+                                <rect key="frame" x="0.0" y="93" width="414" height="720"/>
+                                <connections>
+                                    <segue destination="3eg-5d-o1b" kind="embed" id="itv-FG-q8b"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-gN-3xe">
+                                <rect key="frame" x="0.0" y="93" width="414" height="720"/>
+                                <connections>
+                                    <segue destination="5zj-55-BcQ" kind="embed" id="Jfg-yi-VCz"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="b1n-Yh-oel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Pc-e3-Pwt" firstAttribute="top" secondItem="cQM-BR-7Eg" secondAttribute="bottom" constant="8" symbolic="YES" id="5Mz-Lz-LnF"/>
+                            <constraint firstItem="MYN-Oh-jS8" firstAttribute="bottom" secondItem="b1n-Yh-oel" secondAttribute="bottom" id="5yr-af-gZv"/>
+                            <constraint firstItem="O2H-gN-3xe" firstAttribute="leading" secondItem="b1n-Yh-oel" secondAttribute="leading" id="6gM-VQ-PIJ"/>
+                            <constraint firstItem="MYN-Oh-jS8" firstAttribute="top" secondItem="cQM-BR-7Eg" secondAttribute="bottom" constant="8" symbolic="YES" id="BRJ-rU-cm3"/>
+                            <constraint firstItem="9Pc-e3-Pwt" firstAttribute="leading" secondItem="b1n-Yh-oel" secondAttribute="leading" id="DKl-UA-aTG"/>
+                            <constraint firstItem="cQM-BR-7Eg" firstAttribute="top" secondItem="b1n-Yh-oel" secondAttribute="top" constant="10" id="EjF-8X-QHh"/>
+                            <constraint firstItem="MYN-Oh-jS8" firstAttribute="leading" secondItem="b1n-Yh-oel" secondAttribute="leading" id="O1f-16-ZVh"/>
+                            <constraint firstItem="cQM-BR-7Eg" firstAttribute="centerX" secondItem="s1q-5Q-AH9" secondAttribute="centerX" id="PCx-jA-kEW"/>
+                            <constraint firstItem="b1n-Yh-oel" firstAttribute="trailing" secondItem="O2H-gN-3xe" secondAttribute="trailing" id="WzO-pQ-Gyh"/>
+                            <constraint firstItem="b1n-Yh-oel" firstAttribute="bottom" secondItem="O2H-gN-3xe" secondAttribute="bottom" id="XcB-a5-mnM"/>
+                            <constraint firstItem="b1n-Yh-oel" firstAttribute="trailing" secondItem="9Pc-e3-Pwt" secondAttribute="trailing" id="iB3-OV-gTc"/>
+                            <constraint firstItem="MYN-Oh-jS8" firstAttribute="trailing" secondItem="9Pc-e3-Pwt" secondAttribute="trailing" id="jA4-tS-qXF"/>
+                            <constraint firstItem="O2H-gN-3xe" firstAttribute="top" secondItem="cQM-BR-7Eg" secondAttribute="bottom" constant="8" symbolic="YES" id="jac-ZG-8SW"/>
+                            <constraint firstItem="b1n-Yh-oel" firstAttribute="bottom" secondItem="9Pc-e3-Pwt" secondAttribute="bottom" id="nah-Ro-cqS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Store" id="Omx-qb-UAS"/>
+                    <connections>
+                        <outlet property="categoryView" destination="MYN-Oh-jS8" id="w2S-oo-jFo"/>
+                        <outlet property="menuView" destination="9Pc-e3-Pwt" id="e6f-uT-aoi"/>
+                        <outlet property="previewView" destination="O2H-gN-3xe" id="VKD-Iy-JeB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upi-pm-h50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="534"/>
+            <point key="canvasLocation" x="2173.913043478261" y="533.70535714285711"/>
         </scene>
         <!--Orders-->
         <scene sceneID="l4w-Je-YDQ">
@@ -321,6 +373,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWt-J6-sqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2961" y="-159"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="qLJ-4Q-CaY">
+            <objects>
+                <viewController id="hjo-L4-GMQ" customClass="CategoryViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fc7-QO-Ozd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTZ-0B-iIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2952" y="484"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="7gb-B3-sB1">
+            <objects>
+                <viewController id="3eg-5d-o1b" customClass="MenuViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4YV-12-sHc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCP-dL-PcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3659" y="486"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="DGo-Mo-yow">
+            <objects>
+                <viewController id="5zj-55-BcQ" customClass="PreviewViewController" customModule="cafe_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g37-FR-hH0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="180-LJ-bgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4335" y="481"/>
         </scene>
     </scenes>
     <resources>

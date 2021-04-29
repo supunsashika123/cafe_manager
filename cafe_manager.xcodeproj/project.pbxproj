@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B033049117B8039AFCC7948D /* Pods_cafe_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2E5FF1AEE60262CF7C4E48 /* Pods_cafe_manager.framework */; };
 		EC02A06E263A6DF500E296D1 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A06D263A6DF500E296D1 /* OrderDetailsViewController.swift */; };
+		EC02A071263ACBDB00E296D1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A070263ACBDA00E296D1 /* CategoryViewController.swift */; };
+		EC02A074263ACBEA00E296D1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A073263ACBEA00E296D1 /* MenuViewController.swift */; };
+		EC02A077263ACE6B00E296D1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A076263ACE6B00E296D1 /* StoreViewController.swift */; };
+		EC02A07A263AD32400E296D1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A079263AD32300E296D1 /* PreviewViewController.swift */; };
 		EC981EDD2635FE3000ADE1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */; };
 		EC981EDF2635FE3000ADE1A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */; };
 		EC981EE12635FE3000ADE1A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EE02635FE3000ADE1A3 /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 		3C2E5FF1AEE60262CF7C4E48 /* Pods_cafe_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cafe_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54977AA8C127D810E27CCA2 /* Pods-cafe_manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafe_manager.debug.xcconfig"; path = "Target Support Files/Pods-cafe_manager/Pods-cafe_manager.debug.xcconfig"; sourceTree = "<group>"; };
 		EC02A06D263A6DF500E296D1 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		EC02A070263ACBDA00E296D1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		EC02A073263ACBEA00E296D1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EC02A076263ACE6B00E296D1 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		EC02A079263AD32300E296D1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		EC981ED92635FE3000ADE1A3 /* cafe_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cafe_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 				EC981EF2263600A800ADE1A3 /* LoginViewController.swift */,
 				EC981F3D26372FE100ADE1A3 /* OrdersListViewController.swift */,
 				EC02A06D263A6DF500E296D1 /* OrderDetailsViewController.swift */,
+				EC02A070263ACBDA00E296D1 /* CategoryViewController.swift */,
+				EC02A073263ACBEA00E296D1 /* MenuViewController.swift */,
+				EC02A076263ACE6B00E296D1 /* StoreViewController.swift */,
+				EC02A079263AD32300E296D1 /* PreviewViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -241,13 +253,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC02A06E263A6DF500E296D1 /* OrderDetailsViewController.swift in Sources */,
+				EC02A074263ACBEA00E296D1 /* MenuViewController.swift in Sources */,
+				EC02A077263ACE6B00E296D1 /* StoreViewController.swift in Sources */,
 				EC981F5B2637361200ADE1A3 /* Order.swift in Sources */,
 				EC981EF3263600A800ADE1A3 /* LoginViewController.swift in Sources */,
 				EC981EE12635FE3000ADE1A3 /* ViewController.swift in Sources */,
 				EC981EDD2635FE3000ADE1A3 /* AppDelegate.swift in Sources */,
 				EC981F5F2637366A00ADE1A3 /* Item.swift in Sources */,
 				EC981F3E26372FE200ADE1A3 /* OrdersListViewController.swift in Sources */,
+				EC02A071263ACBDB00E296D1 /* CategoryViewController.swift in Sources */,
 				EC981EDF2635FE3000ADE1A3 /* SceneDelegate.swift in Sources */,
+				EC02A07A263AD32400E296D1 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
