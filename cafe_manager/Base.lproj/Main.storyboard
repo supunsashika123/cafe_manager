@@ -459,22 +459,113 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new food item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSt-D3-r5I">
-                                <rect key="frame" x="96" y="74" width="222" height="32"/>
+                                <rect key="frame" x="96.5" y="74" width="221.5" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-qd-ZrI">
+                                <rect key="frame" x="20" y="155.5" width="374" height="564.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ten-n7-DHY">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="564.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-jY-2ry">
+                                                <rect key="frame" x="0.0" y="36" width="374" height="547"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-gl-8OM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="onTextChange:" destination="hjo-L4-GMQ" eventType="editingChanged" id="sFx-fC-AYd"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-Cn-r8X">
+                                                        <rect key="frame" x="0.0" y="49" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="onTextChange:" destination="hjo-L4-GMQ" eventType="editingChanged" id="2c1-18-Ehi"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-Zf-T82">
+                                                        <rect key="frame" x="0.0" y="98" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="onTextChange:" destination="hjo-L4-GMQ" eventType="editingChanged" id="zce-eC-cPP"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-Vy-Fyt">
+                                                        <rect key="frame" x="0.0" y="147" width="374" height="300"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" id="cEb-MM-h7v"/>
+                                                            <constraint firstAttribute="width" constant="300" id="jha-Iy-wAW"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dH-ul-TUH">
+                                                        <rect key="frame" x="0.0" y="462" width="374" height="30"/>
+                                                        <state key="normal" title="Select Image"/>
+                                                        <connections>
+                                                            <action selector="didTapSelectImageBtn" destination="3eg-5d-o1b" eventType="touchUpInside" id="qDP-am-Aeq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-Op-BPl">
+                                                        <rect key="frame" x="0.0" y="507" width="374" height="40"/>
+                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="OPq-RA-gzK"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Create Item">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapSaveFoodItem" destination="3eg-5d-o1b" eventType="touchUpInside" id="vo6-4d-DcX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="2oE-jY-2ry" firstAttribute="leading" secondItem="ten-n7-DHY" secondAttribute="leading" id="P7l-EW-aCq"/>
+                                            <constraint firstAttribute="width" constant="374" id="Pxu-0P-ANN"/>
+                                            <constraint firstAttribute="height" constant="564.5" id="cZu-8L-74W"/>
+                                            <constraint firstItem="2oE-jY-2ry" firstAttribute="centerX" secondItem="ten-n7-DHY" secondAttribute="centerX" id="yDq-xf-lUN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ten-n7-DHY" firstAttribute="top" secondItem="Ybj-qd-ZrI" secondAttribute="top" id="5op-A4-BOk"/>
+                                    <constraint firstItem="ten-n7-DHY" firstAttribute="leading" secondItem="Ybj-qd-ZrI" secondAttribute="leading" id="Ccb-fb-3R6"/>
+                                    <constraint firstAttribute="bottom" secondItem="ten-n7-DHY" secondAttribute="bottom" id="hTG-jh-MBu"/>
+                                    <constraint firstAttribute="trailing" secondItem="ten-n7-DHY" secondAttribute="trailing" id="rXg-hY-O3g"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="top" secondItem="4YV-12-sHc" secondAttribute="topMargin" constant="30" id="B4u-5k-k0r"/>
-                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="centerX" secondItem="4YV-12-sHc" secondAttribute="centerX" id="IKc-7v-KV2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ybj-qd-ZrI" secondAttribute="trailing" id="9fA-jT-wTk"/>
+                            <constraint firstItem="Ybj-qd-ZrI" firstAttribute="top" secondItem="ZSt-D3-r5I" secondAttribute="bottom" constant="50" id="Sqo-zx-hUK"/>
+                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="top" secondItem="4YV-12-sHc" secondAttribute="topMargin" constant="30" id="X4W-n4-Amb"/>
+                            <constraint firstItem="ZSt-D3-r5I" firstAttribute="centerX" secondItem="4YV-12-sHc" secondAttribute="centerX" id="bUm-AN-trU"/>
+                            <constraint firstItem="ten-n7-DHY" firstAttribute="width" secondItem="4YV-12-sHc" secondAttribute="width" multiplier="0.903382" id="c8N-Zg-oGm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ybj-qd-ZrI" secondAttribute="bottom" id="feK-6K-Gca"/>
+                            <constraint firstItem="Ybj-qd-ZrI" firstAttribute="leading" secondItem="4YV-12-sHc" secondAttribute="leadingMargin" id="klE-Xf-pdj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnSelectImage" destination="7dH-ul-TUH" id="u2F-6g-bLM"/>
+                        <outlet property="imageView" destination="tpF-Vy-Fyt" id="WoC-ZO-EWe"/>
+                        <outlet property="txtDescription" destination="OSV-Cn-r8X" id="vHh-zs-e6T"/>
+                        <outlet property="txtName" destination="kGD-gl-8OM" id="vyJ-d9-auK"/>
+                        <outlet property="txtPrice" destination="XWm-Zf-T82" id="XCK-8U-myK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCP-dL-PcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3659" y="486"/>
+            <point key="canvasLocation" x="3657.971014492754" y="485.49107142857139"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="DGo-Mo-yow">
