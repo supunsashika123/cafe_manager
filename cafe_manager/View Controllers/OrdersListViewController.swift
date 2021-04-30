@@ -24,24 +24,30 @@ class OrdersListViewController: UIViewController, UNUserNotificationCenterDelega
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        let appearance = UITabBarItem.appearance()
+        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)]
+        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: [])
+        
         tblItems.rowHeight = 70
         tblItems.delegate = self
         tblItems.dataSource = self
         
-    
+        
         let db = Firestore.firestore()
         
         db.collection("orders").addSnapshotListener { snapshot, error in
-            guard let data = snapshot?.documents, error == nil else {
+            guard let _ = snapshot?.documents, error == nil else {
                 return
             }
             
-            print(snapshot?.documentChanges.count)
+            
             snapshot?.documentChanges.forEach { diff in if (diff.type == .added) {
                 if(snapshot?.documentChanges.count == 1) {
                     self.showNotification(title: "New order receieved!", body: "New order receieved.")
@@ -63,7 +69,7 @@ class OrdersListViewController: UIViewController, UNUserNotificationCenterDelega
         }
     }
     
-    func showNotification(title:String, body:String){
+    func showNotification(title:String, body:String) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             
@@ -82,7 +88,7 @@ class OrdersListViewController: UIViewController, UNUserNotificationCenterDelega
         UNUserNotificationCenter.current().delegate = self
         
         center.add(request) { (error) in
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? "")
         }
     }
     
@@ -133,11 +139,10 @@ class OrdersListViewController: UIViewController, UNUserNotificationCenterDelega
             }
         }
     }
-
-  
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+        
         
         if let destination = segue.destination as? OrderDetailsViewController {
             destination.order = tableOrders[(tblItems.indexPathForSelectedRow?.section)!][(tblItems.indexPathForSelectedRow?.row)!]
@@ -153,7 +158,7 @@ extension OrdersListViewController: UITableViewDelegate {
         if(tableView == self.tblItems) {
             performSegue(withIdentifier: "showOrderDetails", sender: self)
         }
-
+        
     }
     
 }
@@ -180,8 +185,8 @@ extension OrdersListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-    
+        
+        
         if(tableOrders.count > section){
             return tableOrders[section].count
         } else {
