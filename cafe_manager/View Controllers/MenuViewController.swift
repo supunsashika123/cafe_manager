@@ -57,9 +57,10 @@ class MenuViewController: UIViewController {
                 
                 db.collection("items").addDocument(data: [
                     "name": self.txtName.text!,
-                    "descriptions": self.txtDescription.text!,
-                    "price": self.txtPrice.text!,
-                    "image": urlString
+                    "description": self.txtDescription.text!,
+                    "price": Float(self.txtPrice.text!) ?? 0,
+                    "image": urlString,
+                    "available":false
                 ]
                 )
                 
