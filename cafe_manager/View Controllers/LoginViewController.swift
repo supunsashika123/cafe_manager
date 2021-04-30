@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             self.view.endEditing(true)
             
-            if (email == "admin" && password == "123") {
+            if (email == "admin@gmail.com" && password == "123") {
                 
                 self.userDefaults.setValue("true",forKey: "LOGGED_IN")
                 navigateHome()

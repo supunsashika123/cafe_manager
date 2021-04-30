@@ -49,17 +49,20 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-OT-O6N">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loginEmailTextField"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Vl-UP-gwm">
                                         <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loginPasswordTextField"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlz-Kf-0I2">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <color key="backgroundColor" red="0.7647162676" green="0.76468712090000002" blue="0.76470690969999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3p9-cW-2ZD"/>
                                         </constraints>
@@ -71,6 +74,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUZ-QD-DwK">
                                         <rect key="frame" x="0.0" y="180" width="334" height="20.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loginErrorLabel"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -241,6 +245,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8R2-W0-g0m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="ordersView"/>
                         <constraints>
                             <constraint firstItem="8R2-W0-g0m" firstAttribute="trailing" secondItem="HhG-vr-qB2" secondAttribute="trailing" id="CEa-a5-zQv"/>
                             <constraint firstItem="BZK-FZ-qKu" firstAttribute="centerX" secondItem="Bfg-O9-ItM" secondAttribute="centerX" id="FLo-bw-NgR"/>
