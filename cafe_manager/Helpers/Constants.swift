@@ -8,5 +8,5 @@
 import Foundation
 
 struct Constants {
-    static let orderStatuses = ["NEW", "PREPARATION", "READY", "ARRIVING", "DONE"]
+    static let orderStatuses = ["NEW", "PREPARATION", "READY", "ARRIVING", "DONE", "CANCELED"]
 }

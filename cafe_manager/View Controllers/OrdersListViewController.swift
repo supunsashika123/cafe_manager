@@ -8,13 +8,14 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import UserNotifications
 
-class OrdersListViewController: UIViewController {
+class OrdersListViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var tblItems: UITableView!
     
     @Published var items = [Order]()
     @Published var tableOrders = [[Order]]()
-    
+    var isInitial = true
     
     override func viewDidAppear(_ animated: Bool) {
         fetchOrders {
@@ -32,6 +33,61 @@ class OrdersListViewController: UIViewController {
         tblItems.delegate = self
         tblItems.dataSource = self
         
+    
+        let db = Firestore.firestore()
+        
+        db.collection("orders").addSnapshotListener { snapshot, error in
+            guard let data = snapshot?.documents, error == nil else {
+                return
+            }
+            
+            print(snapshot?.documentChanges.count)
+            snapshot?.documentChanges.forEach { diff in if (diff.type == .added) {
+                if(snapshot?.documentChanges.count == 1) {
+                    self.showNotification(title: "New order receieved!", body: "New order receieved.")
+                    self.fetchOrders {
+                        self.tblItems.reloadData()
+                    }
+                }
+                
+            }
+            if (diff.type == .modified) {
+                self.showNotification(title: "Order updated!", body: "Order status updated to - \(diff.document.data()["status"] as! String)")
+                self.fetchOrders {
+                    self.tblItems.reloadData()
+                }
+                
+            }
+            
+            }
+        }
+    }
+    
+    func showNotification(title:String, body:String){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let uuidString = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        center.add(request) { (error) in
+            print(error?.localizedDescription)
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
     
     func fetchOrders(completed:@escaping ()-> ()) {
