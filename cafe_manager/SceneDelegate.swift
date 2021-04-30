@@ -35,8 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func isUserLoggedIn() -> Bool {
         // Validate user session
-//        return userDefaults.value(forKey: "LOGGED_IN") != nil
-        return false
+        return userDefaults.value(forKey: "LOGGED_IN") != nil
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
