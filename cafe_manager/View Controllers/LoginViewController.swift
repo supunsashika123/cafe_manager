@@ -15,6 +15,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let userDefaults = UserDefaults()
     
+    private let validation: ValidationService
+    
+    init(validation: ValidationService) {
+        self.validation = validation
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.validation = ValidationService()
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,13 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         lblError.alpha = 0
         self.txtPassword.delegate = self
     }
-    
-    func validateForm() -> String? {
-        if txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
-            return "Please fill the form!"
-        }
-        return nil
-    }
+
     
     func showError(_ message:String) {
         lblError.text = message
@@ -49,18 +55,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onLoginClick(_ sender: Any) {
         
-        let error = validateForm()
-        
-        if error != nil {
-            showError(error!)
-        } else {
-            
-            let email = txtEmail.text!
-            let password = txtPassword.text!
+        do {
+            let email = try validation.validateEmail(txtEmail.text!)
+            let password = try validation.validatePassword(txtPassword.text!)
             
             self.view.endEditing(true)
             
-            if(email == "admin" && password == "123") {
+            if (email == "admin" && password == "123") {
                 
                 self.userDefaults.setValue("true",forKey: "LOGGED_IN")
                 navigateHome()
@@ -68,7 +69,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 self.showError("Invalid credentials!")
             }
+            
+        } catch {
+            showError(error.localizedDescription)
         }
-        
     }
 }

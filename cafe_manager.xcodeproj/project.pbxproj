@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9427B8FB92F4E3DDF1BA4972 /* Pods_cafe_managerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18E4C0287C56F18BD0DC37A /* Pods_cafe_managerTests.framework */; };
 		B033049117B8039AFCC7948D /* Pods_cafe_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2E5FF1AEE60262CF7C4E48 /* Pods_cafe_manager.framework */; };
 		EC02A06E263A6DF500E296D1 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A06D263A6DF500E296D1 /* OrderDetailsViewController.swift */; };
 		EC02A071263ACBDB00E296D1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A070263ACBDA00E296D1 /* CategoryViewController.swift */; };
@@ -17,6 +18,8 @@
 		EC02A0AE263B360F00E296D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0AD263B360F00E296D1 /* Constants.swift */; };
 		EC02A0B6263B3CE700E296D1 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0B5263B3CE700E296D1 /* FoodItem.swift */; };
 		EC02A0B9263C0E4300E296D1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0B8263C0E4300E296D1 /* AccountViewController.swift */; };
+		EC02A0BF263C514A00E296D1 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0BE263C514A00E296D1 /* ValidationService.swift */; };
+		EC02A0C9263C55EA00E296D1 /* cafe_managerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02A0C8263C55EA00E296D1 /* cafe_managerTests.swift */; };
 		EC981EDD2635FE3000ADE1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */; };
 		EC981EDF2635FE3000ADE1A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */; };
 		EC981EE12635FE3000ADE1A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981EE02635FE3000ADE1A3 /* ViewController.swift */; };
@@ -30,10 +33,23 @@
 		EC981F5F2637366A00ADE1A3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC981F5E2637366A00ADE1A3 /* Item.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EC02A0CB263C55EA00E296D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC981ED12635FE3000ADE1A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC981ED82635FE3000ADE1A3;
+			remoteInfo = cafe_manager;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		20AA188DC2C17F67992C3F53 /* Pods-cafe_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafe_manager.release.xcconfig"; path = "Target Support Files/Pods-cafe_manager/Pods-cafe_manager.release.xcconfig"; sourceTree = "<group>"; };
 		3C2E5FF1AEE60262CF7C4E48 /* Pods_cafe_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cafe_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D52DD34EDF297F0B6900456 /* Pods-cafe_managerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafe_managerTests.debug.xcconfig"; path = "Target Support Files/Pods-cafe_managerTests/Pods-cafe_managerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86E6760DA9B6D074C3EDE532 /* Pods-cafe_managerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafe_managerTests.release.xcconfig"; path = "Target Support Files/Pods-cafe_managerTests/Pods-cafe_managerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B54977AA8C127D810E27CCA2 /* Pods-cafe_manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafe_manager.debug.xcconfig"; path = "Target Support Files/Pods-cafe_manager/Pods-cafe_manager.debug.xcconfig"; sourceTree = "<group>"; };
+		D18E4C0287C56F18BD0DC37A /* Pods_cafe_managerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cafe_managerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC02A06D263A6DF500E296D1 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		EC02A070263ACBDA00E296D1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		EC02A073263ACBEA00E296D1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +59,10 @@
 		EC02A0AD263B360F00E296D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC02A0B5263B3CE700E296D1 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		EC02A0B8263C0E4300E296D1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EC02A0BE263C514A00E296D1 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		EC02A0C6263C55EA00E296D1 /* cafe_managerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cafe_managerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC02A0C8263C55EA00E296D1 /* cafe_managerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafe_managerTests.swift; sourceTree = "<group>"; };
+		EC02A0CA263C55EA00E296D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC981ED92635FE3000ADE1A3 /* cafe_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cafe_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC981EDC2635FE3000ADE1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC981EDE2635FE3000ADE1A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +79,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC02A0C3263C55EA00E296D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9427B8FB92F4E3DDF1BA4972 /* Pods_cafe_managerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC981ED62635FE3000ADE1A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +103,8 @@
 			children = (
 				B54977AA8C127D810E27CCA2 /* Pods-cafe_manager.debug.xcconfig */,
 				20AA188DC2C17F67992C3F53 /* Pods-cafe_manager.release.xcconfig */,
+				5D52DD34EDF297F0B6900456 /* Pods-cafe_managerTests.debug.xcconfig */,
+				86E6760DA9B6D074C3EDE532 /* Pods-cafe_managerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -83,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2E5FF1AEE60262CF7C4E48 /* Pods_cafe_manager.framework */,
+				D18E4C0287C56F18BD0DC37A /* Pods_cafe_managerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,10 +126,28 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		EC02A0BD263C513700E296D1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EC02A0BE263C514A00E296D1 /* ValidationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EC02A0C7263C55EA00E296D1 /* cafe_managerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC02A0C8263C55EA00E296D1 /* cafe_managerTests.swift */,
+				EC02A0CA263C55EA00E296D1 /* Info.plist */,
+			);
+			path = cafe_managerTests;
+			sourceTree = "<group>";
+		};
 		EC981ED02635FE3000ADE1A3 = {
 			isa = PBXGroup;
 			children = (
 				EC981EDB2635FE3000ADE1A3 /* cafe_manager */,
+				EC02A0C7263C55EA00E296D1 /* cafe_managerTests */,
 				EC981EDA2635FE3000ADE1A3 /* Products */,
 				7FE5CFEEE9ED544D8375F899 /* Pods */,
 				E976159E8C8FFEA7F44414D9 /* Frameworks */,
@@ -109,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				EC981ED92635FE3000ADE1A3 /* cafe_manager.app */,
+				EC02A0C6263C55EA00E296D1 /* cafe_managerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +166,7 @@
 		EC981EDB2635FE3000ADE1A3 /* cafe_manager */ = {
 			isa = PBXGroup;
 			children = (
+				EC02A0BD263C513700E296D1 /* Services */,
 				EC02A0AC263B35FC00E296D1 /* Helpers */,
 				EC981F59263735EE00ADE1A3 /* Models */,
 				EC981EF12636009900ADE1A3 /* View Controllers */,
@@ -160,6 +211,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC02A0C5263C55EA00E296D1 /* cafe_managerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC02A0CD263C55EA00E296D1 /* Build configuration list for PBXNativeTarget "cafe_managerTests" */;
+			buildPhases = (
+				919565DC8D630D664C63A831 /* [CP] Check Pods Manifest.lock */,
+				EC02A0C2263C55EA00E296D1 /* Sources */,
+				EC02A0C3263C55EA00E296D1 /* Frameworks */,
+				EC02A0C4263C55EA00E296D1 /* Resources */,
+				0BDEF7EF940F52C7F83387D1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC02A0CC263C55EA00E296D1 /* PBXTargetDependency */,
+			);
+			name = cafe_managerTests;
+			productName = cafe_managerTests;
+			productReference = EC02A0C6263C55EA00E296D1 /* cafe_managerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EC981ED82635FE3000ADE1A3 /* cafe_manager */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC981EED2635FE3200ADE1A3 /* Build configuration list for PBXNativeTarget "cafe_manager" */;
@@ -188,6 +259,10 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					EC02A0C5263C55EA00E296D1 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = EC981ED82635FE3000ADE1A3;
+					};
 					EC981ED82635FE3000ADE1A3 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -207,11 +282,19 @@
 			projectRoot = "";
 			targets = (
 				EC981ED82635FE3000ADE1A3 /* cafe_manager */,
+				EC02A0C5263C55EA00E296D1 /* cafe_managerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC02A0C4263C55EA00E296D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC981ED72635FE3000ADE1A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +309,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BDEF7EF940F52C7F83387D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cafe_managerTests/Pods-cafe_managerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cafe_managerTests/Pods-cafe_managerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cafe_managerTests/Pods-cafe_managerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4B8645129D88209ABCC567EE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,6 +342,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-cafe_manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		919565DC8D630D664C63A831 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cafe_managerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,6 +390,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC02A0C2263C55EA00E296D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC02A0C9263C55EA00E296D1 /* cafe_managerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC981ED52635FE3000ADE1A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +410,7 @@
 				EC02A0B6263B3CE700E296D1 /* FoodItem.swift in Sources */,
 				EC981EF3263600A800ADE1A3 /* LoginViewController.swift in Sources */,
 				EC981EE12635FE3000ADE1A3 /* ViewController.swift in Sources */,
+				EC02A0BF263C514A00E296D1 /* ValidationService.swift in Sources */,
 				EC981EDD2635FE3000ADE1A3 /* AppDelegate.swift in Sources */,
 				EC981F5F2637366A00ADE1A3 /* Item.swift in Sources */,
 				EC981F3E26372FE200ADE1A3 /* OrdersListViewController.swift in Sources */,
@@ -292,6 +423,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC02A0CC263C55EA00E296D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC981ED82635FE3000ADE1A3 /* cafe_manager */;
+			targetProxy = EC02A0CB263C55EA00E296D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC981EE22635FE3000ADE1A3 /* Main.storyboard */ = {
@@ -313,6 +452,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC02A0CE263C55EA00E296D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D52DD34EDF297F0B6900456 /* Pods-cafe_managerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W9HVBLG65;
+				INFOPLIST_FILE = cafe_managerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "supun.cafe-managerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cafe_manager.app/cafe_manager";
+			};
+			name = Debug;
+		};
+		EC02A0CF263C55EA00E296D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86E6760DA9B6D074C3EDE532 /* Pods-cafe_managerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W9HVBLG65;
+				INFOPLIST_FILE = cafe_managerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "supun.cafe-managerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cafe_manager.app/cafe_manager";
+			};
+			name = Release;
+		};
 		EC981EEB2635FE3200ADE1A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -472,6 +653,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC02A0CD263C55EA00E296D1 /* Build configuration list for PBXNativeTarget "cafe_managerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC02A0CE263C55EA00E296D1 /* Debug */,
+				EC02A0CF263C55EA00E296D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC981ED42635FE3000ADE1A3 /* Build configuration list for PBXProject "cafe_manager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -13,3 +13,16 @@ target 'cafe_manager' do
   pod 'FirebaseFirestoreSwift', '~> 7.0-beta'
 
 end
+
+target 'cafe_managerTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for cafe_manager
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift', '~> 7.0-beta'
+
+end
