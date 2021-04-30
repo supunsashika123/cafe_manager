@@ -468,10 +468,10 @@
                                 <rect key="frame" x="20" y="155.5" width="374" height="564.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ten-n7-DHY">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="564.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="900"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-jY-2ry">
-                                                <rect key="frame" x="0.0" y="36" width="374" height="547"/>
+                                                <rect key="frame" x="0.0" y="36" width="374" height="813.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-gl-8OM">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -511,8 +511,17 @@
                                                             <action selector="didTapSelectImageBtn" destination="3eg-5d-o1b" eventType="touchUpInside" id="qDP-am-Aeq"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA4-En-cy6">
+                                                        <rect key="frame" x="0.0" y="507" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yub-dm-p2f">
+                                                        <rect key="frame" x="0.0" y="542.5" width="374" height="216"/>
+                                                    </pickerView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-Op-BPl">
-                                                        <rect key="frame" x="0.0" y="507" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="773.5" width="374" height="40"/>
                                                         <color key="backgroundColor" name="AccentColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="OPq-RA-gzK"/>
@@ -529,10 +538,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="900" id="N2s-z5-iPx"/>
                                             <constraint firstItem="2oE-jY-2ry" firstAttribute="top" secondItem="ten-n7-DHY" secondAttribute="top" constant="36" id="NWz-tV-syt"/>
                                             <constraint firstItem="2oE-jY-2ry" firstAttribute="leading" secondItem="ten-n7-DHY" secondAttribute="leading" id="P7l-EW-aCq"/>
                                             <constraint firstAttribute="width" constant="374" id="Pxu-0P-ANN"/>
-                                            <constraint firstAttribute="height" constant="564.5" id="cZu-8L-74W"/>
                                             <constraint firstItem="2oE-jY-2ry" firstAttribute="centerX" secondItem="ten-n7-DHY" secondAttribute="centerX" id="yDq-xf-lUN"/>
                                         </constraints>
                                     </view>
@@ -559,6 +568,7 @@
                     <connections>
                         <outlet property="btnSelectImage" destination="7dH-ul-TUH" id="u2F-6g-bLM"/>
                         <outlet property="imageView" destination="tpF-Vy-Fyt" id="WoC-ZO-EWe"/>
+                        <outlet property="pickerCategory" destination="Yub-dm-p2f" id="mlf-lz-TBB"/>
                         <outlet property="txtDescription" destination="OSV-Cn-r8X" id="vHh-zs-e6T"/>
                         <outlet property="txtName" destination="kGD-gl-8OM" id="vyJ-d9-auK"/>
                         <outlet property="txtPrice" destination="XWm-Zf-T82" id="XCK-8U-myK"/>

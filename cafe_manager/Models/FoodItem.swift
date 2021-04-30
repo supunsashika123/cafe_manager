@@ -14,5 +14,6 @@ struct FoodItem:Identifiable, Codable {
     var description: String
     var image: String
     var price: Float
+    var category: Category
     var available: Bool
 }

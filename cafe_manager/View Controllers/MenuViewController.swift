@@ -19,16 +19,30 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var txtPrice: UITextField!
     
+    @IBOutlet weak var pickerCategory: UIPickerView!
+    
     var imageData = Data()
     private let storage = Storage.storage().reference()
+    var categories = [Category]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchCategories {
+            self.pickerCategory.reloadAllComponents()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerCategory.dataSource = self
+        pickerCategory.delegate = self
     }
     
     
     func createFoodItem() {
+        print(categories[pickerCategory.selectedRow(inComponent: 0)])
+        
+        
         let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -45,13 +59,14 @@ class MenuViewController: UIViewController {
                 return
             }
             
-            self.storage.child("categories/\(self.txtName.text!).png").downloadURL { (url, error) in
+            self.storage.child("categories/\(self.txtName.text!).png").downloadURL { [self] (url, error) in
                 guard let url = url, error == nil else {
                     return
                 }
                 
                 let urlString = url.absoluteString
-                print(urlString)
+                
+                
                 
                 let db = Firestore.firestore()
                 
@@ -60,10 +75,11 @@ class MenuViewController: UIViewController {
                     "description": self.txtDescription.text!,
                     "price": Float(self.txtPrice.text!) ?? 0,
                     "image": urlString,
+                    "category": ["name":categories[pickerCategory.selectedRow(inComponent: 0)].name],
                     "available":false
                 ]
                 )
-                
+
                 self.dismiss(animated: true, completion: nil)
                 let alert = UIAlertController(title: "Success!", message: "Food item saved successfully.", preferredStyle: UIAlertController.Style.alert)
                 
@@ -79,6 +95,33 @@ class MenuViewController: UIViewController {
             }
         }
         
+    }
+    
+    func fetchCategories(completed:@escaping ()-> ()) {
+        let db = Firestore.firestore()
+        categories = []
+        //        spinner.startAnimating()
+        
+        db.collection("categories").getDocuments { (snapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for itm in snapshot!.documents {
+                    do {
+                        let objItem = try itm.data(as: Category.self)
+                        self.categories.append(objItem!)
+                    } catch  {
+                        print("parse error!")
+                    }
+                }
+                
+                //                self.spinner.stopAnimating()
+                
+                DispatchQueue.main.async {
+                    completed()
+                }
+            }
+        }
     }
     
     func resetForm() {
@@ -125,5 +168,23 @@ extension MenuViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MenuViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+}
+
+extension MenuViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row].name
+        
     }
 }
